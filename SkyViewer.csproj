@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>SkyViewer</RootNamespace>
+    <AssemblyName>SkyViewer</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
+    <ApplicationUseCompatibleTextRendering>false</ApplicationUseCompatibleTextRendering>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SkyViewer.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Catalogues are compiled into the executable so the app is xcopy-deployable. -->
+    <EmbeddedResource Include="Data\Stars.dat" />
+    <EmbeddedResource Include="Data\Constellations.dat" />
+    <EmbeddedResource Include="Data\MilkyWay.dat" />
+    <EmbeddedResource Include="Data\DeepSkyObjects.dat" />
+  </ItemGroup>
+
+</Project>
